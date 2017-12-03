@@ -8,7 +8,12 @@ class SearchResultList extends React.Component {
     } = this.props;
 
     const listItems = redditList.map(ele =>
-      <li key={ele.data.id}><a target="_blank" href={ele.data.url}>{ele.data.title}</a></li>);
+      (
+        <li key={ele.data.id}>
+          <a target="_blank" href={ele.data.url}>{ele.data.title}</a>
+          <p>ups: {ele.data.ups}</p>
+        </li>
+      ));
     return (
       <ul>{listItems}</ul>
     );
